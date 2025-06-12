@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h1>Welcome to the FinCalc - your personal Financial Calculator</h1>
+        <p>Select a calculator from the navigation bar to get started:</p>
+        <ul>
+            <li><a href="{{ url_for('compound_interest') }}">Compound Interest Calculator</a></li>
+            <li><a href="{{ url_for('loan_payment') }}">Loan Payment Calculator</a></li>
+            <li><a href="{{ url_for('savings_goal') }}">Savings Goal Planner</a></li>
+            <li><a href="{{ url_for('simple_interest') }}">Simple Interest Calculator</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
