@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Loan Payment{% endblock %}
+{% block content %}
+<div class="row">
+    <!-- Left Column: Calculator Form -->
+    <div class="col-md-6">
+        <div class="card">
+            <h2>Loan Payment Calculator</h2>
+            <form method="POST" class="calculator-form">
+                <input type="hidden" name="calculator_type" value="loan_payment">
+                <div class="mb-3">
+                    <label for="principal" class="form-label">Principal ($):</label>
+                    <input type="number" step="0.01" class="form-control" id="principal" name="principal" required>
+                </div>
+                <div class="mb-3">
+                    <label for="annual_rate" class="form-label">Annual Interest Rate (%):</label>
+                    <input type="number" step="0.01" class="form-control" id="annual_rate" name="annual_rate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="years" class="form-label">Loan Term (Years):</label>
+                    <input type="number" class="form-control" id="years" name="years" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            {% if result %}
+            <div class="alert alert-info mt-3">{{ result }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Right Column: Description and Formula -->
+    <div class="col-md-6">
+        <div class="description">
+            <h3>About Loan Payment</h3>
+            <p>
+                This calculator determines the fixed monthly payment for a loan based on the principal, annual interest rate, and loan term. It’s useful for planning payments for mortgages, car loans, or personal loans.
+            </p>
+            <div class="formula">
+                <h4>Formula</h4>
+                \[ M = P \cdot \frac{r (1 + r)^n}{(1 + r)^n - 1} \]
+                <p>
+                    Where:<br>
+                    \( M \): Monthly payment<br>
+                    \( P \): Principal<br>
+                    \( r \): Monthly interest rate (annual rate ÷ 12)<br>
+                    \( n \): Number of months (years × 12)
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
