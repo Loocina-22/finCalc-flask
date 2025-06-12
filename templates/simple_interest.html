@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Simple Interest{% endblock %}
+{% block content %}
+<div class="row">
+    <!-- Left Column: Calculator Form -->
+    <div class="col-md-6">
+        <div class="card">
+            <h2>Simple Interest Calculator</h2>
+            <form method="POST" class="calculator-form">
+                <input type="hidden" name="calculator_type" value="simple_interest">
+                <div class="mb-3">
+                    <label for="principal" class="form-label">Principal ($):</label>
+                    <input type="number" step="0.01" class="form-control" id="principal" name="principal" required>
+                </div>
+                <div class="mb-3">
+                    <label for="rate" class="form-label">Annual Interest Rate (%):</label>
+                    <input type="number" step="0.01" class="form-control" id="rate" name="rate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Time (Years):</label>
+                    <input type="number" step="0.1" class="form-control" id="time" name="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            {% if result %}
+            <div class="alert alert-info mt-3">{{ result }}</div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- Right Column: Description and Formula -->
+    <div class="col-md-6">
+        <div class="description">
+            <h3>About Simple Interest</h3>
+            <p>
+                Simple interest calculates interest only on the initial principal, without compounding. It’s commonly used for short-term loans or investments where interest doesn’t accumulate.
+            </p>
+            <div class="formula">
+                <h4>Formula</h4>
+                \[ I = P \cdot r \cdot t \]
+                \[ A = P + I \]
+                <p>
+                    Where:<br>
+                    \( I \): Interest earned<br>
+                    \( P \): Principal<br>
+                    \( r \): Annual interest rate (decimal)<br>
+                    \( t \): Time (years)<br>
+                    \( A \): Total amount
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
