@@ -1,0 +1,215 @@
+/* Root variables for consistent theming */
+:root {
+    --primary-color: #007bff; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary gray */
+    --background-color: #f4f7fa; /* Light gray background */
+    --text-color: #333333; /* Dark text for readability */
+    --accent-color: #28a745; /* Green for success/result */
+    --border-radius: 8px; /* Rounded corners */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    --error-color: #dc3545; /* Bootstrap danger red */
+}
+
+/* Global styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar customization */
+.navbar {
+    background-color: white !important;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    transition: color 0.3s ease;
+    margin-left: 1rem;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Container padding for better spacing */
+.container {
+    padding: 2rem 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+/* Form styling */
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    padding: 0.75rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+.form-control.is-invalid {
+    border-color: var(--error-color);
+    background-image: none; /* Remove Bootstrap's default invalid icon */
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Result alert */
+.alert-info {
+    background-color: #e7f3fe;
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Card effect for forms */
+.card {
+    background-color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Home page list */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 0.75rem;
+}
+
+ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Description and formula section */
+.description {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.description p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.formula {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.formula h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Error message styling */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .card, .description {
+        padding: 1.5rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+}
